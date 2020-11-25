@@ -1,14 +1,17 @@
 /**
- * C program to find last digit of a number
+ * C program to find first and last digit of a number
  */
-
 #include <stdio.h>
+#include <math.h>
 int main()
 {
-    int n, lastDigit;
+    int n, firstDigit, lastDigit, digits;
     printf("Enter any number: ");
     scanf("%d", &n);
-    lastDigit = n % 10;
-    printf("Last digit = %d", lastDigit);
+    lastDigit = n % 10;     
+    digits = (int)log10(n); 
+    firstDigit = (int)(n / pow(10, digits)); 
+    printf("First digit = %d\n", firstDigit);
+    printf("Last digit = %d\n", lastDigit);
     return 0;
 }
